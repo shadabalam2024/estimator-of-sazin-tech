@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SAZIN TECH Pvt Ltd</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 40px;
+    }
+    th, td {
+      border: 1px solid #333;
+      padding: 8px;
+      text-align: center;
+    }
+    input[type="number"], input[type="text"] {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  </style>
+  <script>
+    let lengthMm = 0;
+    let widthMm = 0;
+
+    function mmToFeet(mm) {
+      return mm * 0.00328084;
+    }
+
+    function calculateDimensions() {
+      const row = document.querySelector("#dimensionTable tr:nth-child(2)");
+      const lengthMmInput = row.cells[0].querySelector("input");
+      const widthMmInput = row.cells[1].querySelector("input");
+
+      lengthMm = parseFloat(lengthMmInput.value) || 0;
+      widthMm = parseFloat(widthMmInput.value) || 0;
+
+      const lengthFt = mmToFeet(lengthMm);
+      const widthFt = mmToFeet(widthMm);
+      const perimeter = 2 * (lengthFt + widthFt);
+      const area = lengthFt * widthFt;
+
+      row.cells[2].textContent = lengthFt.toFixed(2);
+      row.cells[3].textContent = widthFt.toFixed(2);
+      row.cells[4].textContent = perimeter.toFixed(2);
+      row.cells[5].textContent = area.toFixed(2);
+
+      calculate(1);
+      calculate(2);
+      calculate(3);
+      calculate(4);
+      calculate(5);
+      calculate(6);
+      calculate(7);
+      calculate(8);
+      calculate(9);
+      calculate(10);
+      calculate(11);
+      calculate(12);
+      calculate(13);
+    }
+
+    function calculate(index) {
+      const quantity1 = parseFloat(document.getElementById("quantity1").value) || 0;
+
+      if (index === 1) {
+        const rate1 = parseFloat(document.getElementById("rate1").value) || 0;
+        const weight1 = 9.8;
+        const totalWeight1 = quantity1 * weight1;
+        const amount1 = totalWeight1 * rate1;
+
+        document.getElementById("totalWeight1").textContent = totalWeight1.toFixed(2);
+        document.getElementById("amount1").textContent = amount1.toFixed(2);
+
+        document.getElementById("quantity2").value = (quantity1 * 2.5).toFixed(2);
+        calculate(2);
+        calculate(4);
+      }
+
+      if (index === 2) {
+        const quantity2 = parseFloat(document.getElementById("quantity2").value) || 0;
+        const rate2 = parseFloat(document.getElementById("rate2").value) || 0;
+        const weight2 = 4.7;
+        const totalWeight2 = quantity2 * weight2;
+        const amount2 = totalWeight2 * rate2;
+
+        document.getElementById("totalWeight2").textContent = totalWeight2.toFixed(2);
+        document.getElementById("amount2").textContent = amount2.toFixed(2);
+      }
+
+      if (index === 3) {
+        const quantity3 = (lengthMm*2 / 5800) * 2;
+        document.getElementById("quantity3").value = quantity3.toFixed(2);
+
+        const rate3 = parseFloat(document.getElementById("rate3").value) || 0;
+        const weight3 = 1.22;
+        const totalWeight3 = quantity3 * weight3;
+        const amount3 = totalWeight3 * rate3;
+
+        document.getElementById("totalWeight3").textContent = totalWeight3.toFixed(2);
+        document.getElementById("amount3").textContent = amount3.toFixed(2);
+      }
+
+      if (index === 4) {
+        const quantity4 = quantity1 * 2.5;
+        document.getElementById("quantity4").value = quantity4.toFixed(2);
+
+        const rate4 = parseFloat(document.getElementById("rate4").value) || 0;
+        const weight4 = 1.35;
+        const totalWeight4 = quantity4 * weight4;
+        const amount4 = totalWeight4 * rate4;
+
+        document.getElementById("totalWeight4").textContent = totalWeight4.toFixed(2);
+        document.getElementById("amount4").textContent = amount4.toFixed(2);
+      }
+
+      if (index === 5) {
+  const quantity5 = (widthMm*2 / 1000) * 3;
+  document.getElementById("quantity5").value = quantity5.toFixed(2);
+
+  const rate5 = parseFloat(document.getElementById("rate5").value) || 0;
+  const totalWeight5 = quantity5;
+  const amount5 = totalWeight5 * rate5;
+
+  document.getElementById("totalWeight5").textContent = totalWeight5.toFixed(2);
+  document.getElementById("amount5").textContent = amount5.toFixed(2);
+}
+if (index === 6) {
+  const lengthFt = mmToFeet(lengthMm);
+  const widthFt = mmToFeet(widthMm);
+  const quantity6 = (lengthFt*2 + widthFt*2) / 3;
+  const weightPerLength6 = 0.28;
+  const rate6 = parseFloat(document.getElementById("rate6").value) || 0;
+
+  const totalWeight6 = quantity6 * weightPerLength6;
+  const amount6 = totalWeight6 * rate6;
+
+  document.getElementById("quantity6").value = quantity6.toFixed(2);
+  document.getElementById("totalWeight6").textContent = totalWeight6.toFixed(2);
+  document.getElementById("amount6").textContent = amount6.toFixed(2);
+}
+if (index === 7) {
+  const totalWindowInput = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(7) input");
+  const totalWindow = parseFloat(totalWindowInput.value) || 0;
+  const quantity7 = totalWindow * 6;
+  const rate7 = parseFloat(document.getElementById("rate7").value) || 0;
+  const amount7 = quantity7 * rate7;
+
+  document.getElementById("quantity7").value = quantity7.toFixed(2);
+  document.getElementById("totalWeight7").textContent = "—";
+  document.getElementById("amount7").textContent = amount7.toFixed(2);
+}
+if (index === 8) {
+  const perimeterCell = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(5)");
+  const perimeter = parseFloat(perimeterCell.textContent) || 0;
+  const quantity8 = (perimeter) * 3;
+  const rate8 = parseFloat(document.getElementById("rate8").value) || 0;
+  const amount8 = quantity8 * rate8;
+
+  document.getElementById("quantity8").value = quantity8.toFixed(2);
+  document.getElementById("totalWeight8").textContent = "—";
+  document.getElementById("amount8").textContent = amount8.toFixed(2);
+}
+if (index === 9) {
+  const totalWindowInput = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(7) input");
+  const totalWindow = parseFloat(totalWindowInput.value) || 0;
+  const quantity9 = totalWindow * 80;
+
+  document.getElementById("quantity9").value = quantity9.toFixed(2);
+  document.getElementById("totalWeight9").textContent = "—";
+  document.getElementById("amount9").textContent = quantity9.toFixed(2);
+}
+if (index === 10) {
+  const quantity10 = parseFloat(document.getElementById("quantity10").value) || 0;
+  const rate10 = parseFloat(document.getElementById("rate10").value) || 0;
+  const amount10 = quantity10 * rate10;
+
+  document.getElementById("totalWeight10").textContent = "—";
+  document.getElementById("amount10").textContent = amount10.toFixed(2);
+}
+
+if (index === 11) {
+  const quantity11 = parseFloat(document.getElementById("quantity11").value) || 0;
+  const rate11 = parseFloat(document.getElementById("rate11").value) || 0;
+  const amount11 = quantity11 * rate11;
+
+  document.getElementById("totalWeight11").textContent = "—";
+  document.getElementById("amount11").textContent = amount11.toFixed(2);
+}
+
+if (index === 12) {
+  const areaCell = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(6)");
+  const area = parseFloat(areaCell.textContent) || 0;
+  const quantity12 = area / 3;
+  const rate12 = parseFloat(document.getElementById("rate12").value) || 0;
+  const amount12 = quantity12 * rate12;
+
+  document.getElementById("quantity12").textContent = quantity12.toFixed(2);
+  document.getElementById("totalWeight12").textContent = "—";
+  document.getElementById("amount12").textContent = amount12.toFixed(2);
+}
+
+if (index === 13) {
+  const areaCell = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(6)");
+  const area = parseFloat(areaCell.textContent) || 0;
+  const jaaliQuantity = area / 3;
+  const quantity13 = jaaliQuantity * 3;
+  const rate13 = parseFloat(document.getElementById("rate13").value) || 0;
+  const amount13 = quantity13 * rate13;
+
+  document.getElementById("quantity13").textContent = quantity13.toFixed(2);
+  document.getElementById("totalWeight13").textContent = "—";
+  document.getElementById("amount13").textContent = amount13.toFixed(2);
+}
+
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const inputs = document.querySelectorAll("#dimensionTable input");
+      inputs.forEach(input => {
+        input.addEventListener("input", calculateDimensions);
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>SAZIN TECH Pvt Ltd</h1>
+  <h4>
+    D-10, Industrial Area, New Siwan, Phase 1, Hardiya More<br>
+    Opposite Paani Tanki, Siwan Bihar, PIN-841226
+  </h4>
+
+  <!-- First Table: Dimensions -->
+  <table id="dimensionTable">
+    <tr>
+      <th>Length (mm)</th>
+      <th>Width (mm)</th>
+      <th>Length (ft)</th>
+      <th>Width (ft)</th>
+      <th>Perimeter (ft)</th>
+      <th>Area (sq ft)</th>
+      <th>Total Window</th>
+    </tr>
+    <tr>
+      <td><input type="number" placeholder="Length in mm" /></td>
+      <td><input type="number" placeholder="Width in mm" /></td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td><input type="number" placeholder="Window count" /></td>
+    </tr>
+  </table>
+
+  <!-- Second Table: Profiles -->
+  <table id="profileTable">
+    <thead>
+      <tr>
+        <th>Profile</th>
+        <th>Quantity</th>
+        <th>Weight/Length</th>
+        <th>Total Weight</th>
+        <th>Rate</th>
+        <th>Amount</th>
+        <th>Remarks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>3 track profile</td>
+        <td><input type="number" id="quantity1" oninput="calculate(1); calculate(3); calculate(5);"></td>
+        <td>9.8</td>
+        <td id="totalWeight1">—</td>
+        <td><input type="number" id="rate1" oninput="calculate(1)"></td>
+        <td id="amount1">—</td>
+        <td><input type="text" id="remarks1"></td>
+      </tr>
+      <tr>
+        <td>SAS</td>
+        <td><input type="number" id="quantity2" readonly></td>
+        <td>4.7</td>
+        <td id="totalWeight2">—</td>
+        <td><input type="number" id="rate2" oninput="calculate(2)"></td>
+        <td id="amount2">—</td>
+        <td><input type="text" id="remarks2"></td>
+      </tr>
+      <tr>
+        <td>Interlock</td>
+        <td><input type="number" id="quantity3" readonly></td>
+        <td>1.22</td>
+        <td id="totalWeight3">—</td>
+        <td><input type="number" id="rate3" oninput="calculate(3)"></td>
+        <td id="amount3">—</td>
+        <td><input type="text" id="remarks3"></td>
+      </tr>
+      <tr>
+        <td>BID</td>
+        <td><input type="number" id="quantity4" readonly></td>
+        <td>1.35</td>
+        <td id="totalWeight4">—</td>
+        <td><input type="number" id="rate4" oninput="calculate(4)">
+        <td id="amount4">—</td>
+        <td><input type="text" id="remarks4"></td>
+      </tr>
+      <tr>
+  <td>Aluminium Track</td>
+  <td><input type="number" id="quantity5" readonly></td>
+  <td>—</td>
+  <td id="totalWeight5">—</td>
+  <td><input type="number" id="rate5" oninput="calculate(5)"></td>
+  <td id="amount5">—</td>
+  <td><input type="text" id="remarks5"></td>
+</tr>
+      <tr>
+  <tr>
+  <td>Loha</td>
+  <td><input type="number" id="quantity6" readonly></td>
+  <td>0.28</td>
+  <td id="totalWeight6">—</td>
+  <td><input type="number" id="rate6" oninput="calculate(6)"></td>
+  <td id="amount6">—</td>
+  <td><input type="text" id="remarks6"></td>
+</tr>
+</tr>
+
+<tr>
+  <td>CHAKKA</td>
+  <td><input type="number" id="quantity7" readonly></td>
+  <td>—</td>
+  <td id="totalWeight7">—</td>
+  <td><input type="number" id="rate7" oninput="calculate(7)"></td>
+  <td id="amount7">—</td>
+  <td><input type="text" id="remarks7"></td>
+</tr>
+
+<tr>
+  <td>T Brush</td>
+  <td><input type="number" id="quantity8" readonly></td>
+  <td>—</td>
+  <td id="totalWeight8">—</td>
+  <td><input type="number" id="rate8" oninput="calculate(8)"></td>
+  <td id="amount8">—</td>
+  <td><input type="text" id="remarks8"></td>
+</tr>
+
+<tr>
+  <td>T Screw etc</td>
+  <td><input type="number" id="quantity9" readonly></td>
+  <td>—</td>
+  <td id="totalWeight9">—</td>
+  <td>—</td>
+  <td id="amount9">—</td>
+  <td><input type="text" id="remarks9"></td>
+</tr>
+
+<tr>
+  <td>Touch lock</td>
+  <td><input type="number" id="quantity10" oninput="calculate(10)"></td>
+  <td>—</td>
+  <td id="totalWeight10">—</td>
+  <td><input type="number" id="rate10" oninput="calculate(10)"></td>
+  <td id="amount10">—</td>
+  <td><input type="text" id="remarks10"></td>
+</tr>
+
+<tr>
+  <td>Espage</td>
+  <td><input type="number" id="quantity11" oninput="calculate(11)"></td>
+  <td>—</td>
+  <td id="totalWeight11">—</td>
+  <td><input type="number" id="rate11" oninput="calculate(11)"></td>
+  <td id="amount11">—</td>
+  <td><input type="text" id="remarks11"></td>
+</tr>
+
+<tr>
+  <td>Jaali</td>
+  <td id="quantity12">—</td>
+  <td>—</td>
+  <td id="totalWeight12">—</td>
+  <td><input type="number" id="rate12" oninput="calculate(12)"></td>
+  <td id="amount12">—</td>
+  <td><input type="text" id="remarks12"></td>
+</tr>
+
+<tr>
+  <td>Glass</td>
+  <td id="quantity13">—</td>
+  <td>—</td>
+  <td id="totalWeight13">—</td>
+  <td><input type="number" id="rate13" oninput="calculate(13)"></td>
+  <td id="amount13">—</td>
+  <td><input type="text" id="remarks13"></td>
+</tr>
+
+
+</tbody>
