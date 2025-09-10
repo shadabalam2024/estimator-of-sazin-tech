@@ -4,27 +4,370 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SAZIN TECH Pvt Ltd</title>
+  
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
+     body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f3f4f6;
+      padding: 40px;
+      color: #333;
+      font-size: 20px;
     }
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      margin-bottom: 40px;
-    }
-    th, td {
-      border: 1px solid #333;
-      padding: 8px;
+
+    h1 {
       text-align: center;
+      color: #1a73e8;
+      margin-bottom: 5px;
+      font-size: 36px;
     }
-    input[type="number"], input[type="text"] {
+
+    h4 {
+      text-align: center;
+      color: #555;
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+
+    table {
       width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      table-layout: fixed;
+      margin-top: 20px;
+    }
+    th {
+      background-color: #1a73e8;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 18px;
+      padding: 14px;
+    }
+
+    td {
+      text-align: center;
+      font-size: 18px;
+      padding: 14px;
+      border-bottom: 1px solid #e0e0e0;
+      word-wrap: break-word;
+      overflow: hidden;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 18px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
       box-sizing: border-box;
     }
+    button {
+      margin-top: 25px;
+      padding: 14px 28px;
+      background-color: #1a73e8;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    button:hover {
+      background-color: #0f5ec9;
+    }
+
+    h3 {
+      text-align: right;
+      margin-top: 30px;
+      color: #111;
+      font-size: 22px;
+    }
+
+    #grandTotal {
+      font-weight: bold;
+      color: #1a73e8;
+    }
+
+
+
+
   </style>
-  <script>
+
+
+ 
+</head>
+<body>
+  <h1>SAZIN TECH Pvt Ltd</h1>
+  <h4>
+    D-10, Industrial Area, New Siwan, Phase 1, Hardiya More<br>
+    Opposite Paani Tanki, Siwan Bihar, PIN-841226
+  </h4>
+
+  <!-- First Table: Dimensions -->
+  <table id="dimensionTable">
+    <tr>
+      <th>Length (mm)</th>
+      <th>Width (mm)</th>
+      <th>Length (ft)</th>
+      <th>Width (ft)</th>
+      <th>Perimeter (ft)</th>
+      <th>Area (sq ft)</th>
+      <th>Total Window</th>
+    </tr>
+    <tr>
+      <td><input type="number" placeholder="Length in mm" /></td>
+      <td><input type="number" placeholder="Width in mm" /></td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td><input type="number" placeholder="Window count" /></td>
+    </tr>
+  </table>
+
+  <!-- Second Table: Profiles -->
+  <table id="profileTable">
+    <thead>
+      <tr>
+        <th>Profile</th>
+        <th>Quantity</th>
+        <th>Weight/Length</th>
+        <th>Total Weight</th>
+        <th>Rate</th>
+        <th>Amount</th>
+        <th>Remarks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>3 track profile</td>
+        <td><input type="number" id="quantity1" ></td>
+        <td>9.8</td>
+        <td id="totalWeight1">—</td>
+        <td><input type="number" id="rate1" oninput="calculate(1)"></td>
+        <td id="amount1">—</td>
+        <td><input type="text" id="remarks1"></td>
+      </tr>
+      <tr>
+        <td>SAS</td>
+        <td><input type="number" id="quantity2" ></td>
+        <td>4.7</td>
+        <td id="totalWeight2">—</td>
+        <td><input type="number" id="rate2" oninput="calculate(2)"></td>
+        <td id="amount2">—</td>
+        <td><input type="text" id="remarks2"></td>
+      </tr>
+      <tr>
+        <td>Interlock</td>
+        <td><input type="number" id="quantity3" ></td>
+        <td>1.22</td>
+        <td id="totalWeight3">—</td>
+        <td><input type="number" id="rate3" oninput="calculate(3)"></td>
+        <td id="amount3">—</td>
+        <td><input type="text" id="remarks3"></td>
+      </tr>
+      <tr>
+        <td>BID</td>
+        <td><input type="number" id="quantity4" ></td>
+        <td>1.35</td>
+        <td id="totalWeight4">—</td>
+        <td><input type="number" id="rate4" oninput="calculate(4)">
+        <td id="amount4">—</td>
+        <td><input type="text" id="remarks4"></td>
+      </tr>
+      <tr>
+  <td>Aluminium Track</td>
+  <td><input type="number" id="quantity5" ></td>
+  <td>—</td>
+  <td id="totalWeight5">—</td>
+  <td><input type="number" id="rate5" oninput="calculate(5)"></td>
+  <td id="amount5">—</td>
+  <td><input type="text" id="remarks5"></td>
+</tr>
+      <tr>
+  <tr>
+  <td>Loha</td>
+  <td><input value="8" type="number" id="quantity6" ></td>
+  <td>0.28</td>
+  <td id="totalWeight6">—</td>
+  <td><input type="number" id="rate6" oninput="calculate(6)"></td>
+  <td id="amount6">—</td>
+  <td><input type="text" id="remarks6"></td>
+</tr>
+</tr>
+
+<tr>
+  <td>CHAKKA</td>
+  <td><input type="number" id="quantity7" ></td>
+  <td>—</td>
+  <td id="totalWeight7">—</td>
+  <td><input type="number" id="rate7" oninput="calculate(7)"></td>
+  <td id="amount7">—</td>
+  <td><input type="text" id="remarks7"></td>
+</tr>
+
+<tr>
+  <td>T Brush</td>
+  <td><input type="number" id="quantity8" ></td>
+  <td>—</td>
+  <td id="totalWeight8">—</td>
+  <td><input type="number" id="rate8" oninput="calculate(8)"></td>
+  <td id="amount8">—</td>
+  <td><input type="text" id="remarks8"></td>
+</tr>
+
+<tr>
+  <td>T Screw etc</td>
+  <td><input type="number" id="quantity9" ></td>
+  <td>—</td>
+  <td id="totalWeight9">—</td>
+  <td>—</td>
+  <td id="amount9">—</td>
+  <td><input type="text" id="remarks9"></td>
+</tr>
+
+<tr>
+  <td>Touch lock</td>
+  <td><input type="number" value="2" id="quantity10" oninput="calculate(10)"></td>
+  <td>—</td>
+  <td id="totalWeight10">—</td>
+  <td><input type="number" id="rate10" oninput="calculate(10)"></td>
+  <td id="amount10">—</td>
+  <td><input type="text" id="remarks10"></td>
+</tr>
+
+<tr>
+  <td>Espage</td>
+  <td><input type="number" id="quantity11" oninput="calculate(11)"></td>
+  <td>—</td>
+  <td id="totalWeight11">—</td>
+  <td><input type="number" id="rate11" oninput="calculate(11)"></td>
+  <td id="amount11">—</td>
+  <td><input type="text" id="remarks11"></td>
+</tr>
+
+<tr>
+  <td>Jaali</td>
+  <td id="quantity12">—</td>
+  <td>—</td>
+  <td id="totalWeight12">—</td>
+  <td><input type="number" id="rate12" oninput="calculate(12)"></td>
+  <td id="amount12">—</td>
+  <td><input type="text" id="remarks12"></td>
+</tr>
+
+<tr>
+  <td>Glass</td>
+  <td id="quantity13">—</td>
+  <td>—</td>
+  <td id="totalWeight13">—</td>
+  <td><input type="number" id="rate13" oninput="calculate(13)"></td>
+  <td id="amount13">—</td>
+  <td><input type="text" id="remarks13"></td>
+</tr>
+
+<tr>
+  <td>KEEP</td>
+  <td><input value="2" type="number" id="quantity14" oninput="calculate(14)"></td>
+  <td>—</td>
+  <td id="totalWeight14">—</td>
+  <td><input type="number" id="rate14" oninput="calculate(14)"></td>
+  <td id="amount14">—</td>
+  <td><input type="text" id="remarks14"></td>
+</tr>
+
+<tr>
+  <td>Fastener</td>
+  <td><input value="8" type="number" id="quantity15" oninput="calculate(15)"></td>
+  <td>—</td>
+  <td id="totalWeight15">—</td>
+  <td><input type="number" id="rate15" oninput="calculate(15)"></td>
+  <td id="amount15">—</td>
+  <td><input type="text" id="remarks15"></td>
+</tr>
+
+<tr style="font-weight: bold; background-color: #f0f0f0;">
+  <td colspan="5" style="text-align: right;">Subtotal</td>
+  <td id="subtotalAmount">—</td>
+  <td></td>
+</tr>
+
+<tr>
+  <td colspan="5" style="text-align: right;">GST (18%)</td>
+  <td id="gstAmount">—</td>
+  <td></td>
+</tr>
+
+
+<tr>
+  <td colspan="4" style="text-align: right;">Labour Rate (₹/sq ft)</td>
+  <td><input type="number" id="labourRate" value="30" oninput="calculateLabourCharge()"></td>
+  <td id="labourCharge">—</td>
+  <td></td>
+</tr>
+
+
+<tr>
+  <td colspan="4" style="text-align: right;">Installation Rate (₹/sq ft)</td>
+  <td><input type="number" id="installationRate" value="22" oninput="calculateInstallationCharge()"></td>
+  <td id="installationCharge">—</td>
+  <td></td>
+</tr>
+
+<tr>
+  <td colspan="4" style="text-align: right;">SAZIN Rate (₹/sq ft)</td>
+  <td><input type="number" id="sazinRate" value="30" oninput="calculateSazinCharge()"></td>
+  <td id="sazinCharge">—</td>
+  <td></td>
+</tr>
+
+<tr style="font-weight: bold; background-color: #e8f4ff;">
+  <td colspan="5" style="text-align: right;">Total Amount</td>
+  <td id="totalAmount">—</td>
+  <td></td>
+</tr>
+</tbody>
+</table>
+
+<div>
+  <button id="addBtn">Add</button>
+  <!-- <button id="resetBtn">Reset</button> -->
+  
+</div>
+
+<br> <br>
+<h1> Profile Costs</h1>
+
+<!-- Third Table: Profile Cost Summary -->
+<table id="profileCostTable">
+  <thead>
+    <tr>
+      <th>S No.</th>
+      <th>Profile Size</th>
+      <th>Cost</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Rows will be added here -->
+  </tbody>
+  
+</table>
+<h3>Grand Total: <span id="grandTotal">0.00</span></h3>
+
+
+
+
+
+
+
+
+ <script>
     let lengthMm = 0;
     let widthMm = 0;
 
@@ -63,17 +406,58 @@
       calculate(11);
       calculate(12);
       calculate(13);
+      calculate(14);
+      calculate(15);
+      calculateLabourCharge();
+      calculateInstallationCharge();
+      calculateSazinCharge();
     }
 
+
+    function calculateGST() {
+  const subtotal = parseFloat(document.getElementById("subtotalAmount").textContent) || 0;
+  const gstRate = 18; // Fixed GST %
+  const gstAmount = subtotal * (gstRate / 100);
+
+  document.getElementById("gstAmount").textContent = gstAmount.toFixed(2);
+}
+
+function calculateSubtotal() {
+  let subtotal = 0;
+
+  for (let i = 1; i <= 15; i++) {
+    const amountCell = document.getElementById(`amount${i}`);
+    if (amountCell) {
+      const amount = parseFloat(amountCell.textContent) || 0;
+      subtotal += amount;
+    }
+  }
+
+  document.getElementById("subtotalAmount").textContent = subtotal.toFixed(2);
+  calculateGST(); // calculation of gst
+
+  calculateTotalAmount();
+
+
+}
+
+
+
     function calculate(index) {
+
       const quantity1 = parseFloat(document.getElementById("quantity1").value) || 0;
 
       if (index === 1) {
+        const perimeterCell = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(5)");
+        const perimeter = parseFloat(perimeterCell.textContent) || 0;
+        const quantity1 = (perimeter)
+
         const rate1 = parseFloat(document.getElementById("rate1").value) || 0;
         const weight1 = 9.8;
         const totalWeight1 = quantity1 * weight1;
         const amount1 = totalWeight1 * rate1;
 
+        document.getElementById("quantity1").value=quantity1
         document.getElementById("totalWeight1").textContent = totalWeight1.toFixed(2);
         document.getElementById("amount1").textContent = amount1.toFixed(2);
 
@@ -217,8 +601,73 @@ if (index === 13) {
   document.getElementById("totalWeight13").textContent = "—";
   document.getElementById("amount13").textContent = amount13.toFixed(2);
 }
+if (index === 14) {
+  const quantity14 = parseFloat(document.getElementById("quantity14").value) || 0;
+  const rate14 = parseFloat(document.getElementById("rate14").value) || 0;
+  const amount14 = quantity14 * rate14;
+
+  document.getElementById("totalWeight14").textContent = "—";
+  document.getElementById("amount14").textContent = amount14.toFixed(2);
+}
+if (index === 15) {
+  const quantity = parseFloat(document.getElementById("quantity15").value) || 0;
+  const rate = parseFloat(document.getElementById("rate15").value) || 0;
+  const amount = quantity * rate;
+
+  document.getElementById("totalWeight15").textContent = "—";
+  document.getElementById("amount15").textContent = amount.toFixed(2);
+}
+  calculateSubtotal();
 
     }
+
+
+
+    function calculateLabourCharge() {
+  const areaCell = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(6)");
+  const area = parseFloat(areaCell.textContent) || 0;
+  const labourRate = parseFloat(document.getElementById("labourRate").value) || 0;
+  const labourCharge = area * labourRate;
+
+  document.getElementById("labourCharge").textContent = labourCharge.toFixed(2);
+  calculateTotalAmount();
+}
+
+
+  function calculateInstallationCharge() {
+  const areaCell = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(6)");
+  const area = parseFloat(areaCell.textContent) || 0;
+  const installationRate = parseFloat(document.getElementById("installationRate").value) || 0;
+  const installationCharge = area * installationRate;
+
+  document.getElementById("installationCharge").textContent = installationCharge.toFixed(2);
+  calculateTotalAmount();
+}
+
+
+  function calculateSazinCharge() {
+  const areaCell = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(6)");
+  const area = parseFloat(areaCell.textContent) || 0;
+  const sazinRate = parseFloat(document.getElementById("sazinRate").value) || 0;
+  const sazinCharge = area * sazinRate;
+
+  document.getElementById("sazinCharge").textContent = sazinCharge.toFixed(2);
+  calculateTotalAmount();
+}
+
+
+function calculateTotalAmount() {
+  const subtotal = parseFloat(document.getElementById("subtotalAmount").textContent) || 0;
+  const gst = parseFloat(document.getElementById("gstAmount").textContent) || 0;
+  const labour = parseFloat(document.getElementById("labourCharge").textContent) || 0;
+  const installation = parseFloat(document.getElementById("installationCharge").textContent) || 0;
+  const sazin = parseFloat(document.getElementById("sazinCharge").textContent) || 0;
+
+  const total = subtotal + gst + labour + installation + sazin;
+  document.getElementById("totalAmount").textContent = total.toFixed(2);
+}
+
+
 
     window.addEventListener("DOMContentLoaded", () => {
       const inputs = document.querySelectorAll("#dimensionTable input");
@@ -226,177 +675,84 @@ if (index === 13) {
         input.addEventListener("input", calculateDimensions);
       });
     });
+
+    
+  
+
+  document.getElementById("addBtn").addEventListener("click", () => {
+  const tableBody = document.querySelector("#profileCostTable tbody");
+
+  const lengthFtCell = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(3)");
+  const widthFtCell = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(4)");
+
+  const lengthFt = parseFloat(lengthFtCell.textContent) || 0;
+  const widthFt = parseFloat(widthFtCell.textContent) || 0;
+
+  const totalAmountText = document.getElementById("totalAmount").textContent;
+  const totalAmount = parseFloat(totalAmountText);
+
+  if (lengthFt === 0 || widthFt === 0) {
+    alert("Please enter valid Length and Width.");
+    return;
+  }
+
+  const newRow = document.createElement("tr");
+
+  const serialCell = document.createElement("td");
+  serialCell.textContent = tableBody.rows.length + 1;
+
+  const sizeCell = document.createElement("td");
+  sizeCell.textContent = `${lengthFt.toFixed(2)} × ${widthFt.toFixed(2)} ft`;
+
+  const costCell = document.createElement("td");
+  costCell.textContent = isNaN(totalAmount) ? "—" : `₹${totalAmount.toFixed(2)}`;
+
+  const deleteCell = document.createElement("td");
+  const deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "Delete";
+  deleteBtn.style.backgroundColor = "#e53935";
+  deleteBtn.style.color = "#fff";
+  deleteBtn.style.border = "none";
+  deleteBtn.style.padding = "6px 12px";
+  deleteBtn.style.borderRadius = "4px";
+  deleteBtn.style.cursor = "pointer";
+  deleteBtn.style.fontSize = "14px";
+  deleteBtn.addEventListener("click", () => {
+    newRow.remove();
+    updateGrandTotal();
+    updateSerialNumbers();
+  });
+  deleteCell.appendChild(deleteBtn);
+
+  newRow.appendChild(serialCell);
+  newRow.appendChild(sizeCell);
+  newRow.appendChild(costCell);
+  newRow.appendChild(deleteCell);
+
+  tableBody.appendChild(newRow);
+
+  updateGrandTotal();
+});
+
+function updateGrandTotal() {
+  let grandTotal = 0;
+  document.querySelectorAll("#profileCostTable tbody tr").forEach(row => {
+    const costText = row.cells[2].textContent.replace(/[₹,]/g, "");
+    const cost = parseFloat(costText);
+    if (!isNaN(cost)) grandTotal += cost;
+  });
+  document.getElementById("grandTotal").textContent = grandTotal.toFixed(2);
+}
+
+
+    
+    
   </script>
-</head>
-<body>
-  <h1>SAZIN TECH Pvt Ltd</h1>
-  <h4>
-    D-10, Industrial Area, New Siwan, Phase 1, Hardiya More<br>
-    Opposite Paani Tanki, Siwan Bihar, PIN-841226
-  </h4>
-
-  <!-- First Table: Dimensions -->
-  <table id="dimensionTable">
-    <tr>
-      <th>Length (mm)</th>
-      <th>Width (mm)</th>
-      <th>Length (ft)</th>
-      <th>Width (ft)</th>
-      <th>Perimeter (ft)</th>
-      <th>Area (sq ft)</th>
-      <th>Total Window</th>
-    </tr>
-    <tr>
-      <td><input type="number" placeholder="Length in mm" /></td>
-      <td><input type="number" placeholder="Width in mm" /></td>
-      <td>—</td>
-      <td>—</td>
-      <td>—</td>
-      <td>—</td>
-      <td><input type="number" placeholder="Window count" /></td>
-    </tr>
-  </table>
-
-  <!-- Second Table: Profiles -->
-  <table id="profileTable">
-    <thead>
-      <tr>
-        <th>Profile</th>
-        <th>Quantity</th>
-        <th>Weight/Length</th>
-        <th>Total Weight</th>
-        <th>Rate</th>
-        <th>Amount</th>
-        <th>Remarks</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>3 track profile</td>
-        <td><input type="number" id="quantity1" oninput="calculate(1); calculate(3); calculate(5);"></td>
-        <td>9.8</td>
-        <td id="totalWeight1">—</td>
-        <td><input type="number" id="rate1" oninput="calculate(1)"></td>
-        <td id="amount1">—</td>
-        <td><input type="text" id="remarks1"></td>
-      </tr>
-      <tr>
-        <td>SAS</td>
-        <td><input type="number" id="quantity2" readonly></td>
-        <td>4.7</td>
-        <td id="totalWeight2">—</td>
-        <td><input type="number" id="rate2" oninput="calculate(2)"></td>
-        <td id="amount2">—</td>
-        <td><input type="text" id="remarks2"></td>
-      </tr>
-      <tr>
-        <td>Interlock</td>
-        <td><input type="number" id="quantity3" readonly></td>
-        <td>1.22</td>
-        <td id="totalWeight3">—</td>
-        <td><input type="number" id="rate3" oninput="calculate(3)"></td>
-        <td id="amount3">—</td>
-        <td><input type="text" id="remarks3"></td>
-      </tr>
-      <tr>
-        <td>BID</td>
-        <td><input type="number" id="quantity4" readonly></td>
-        <td>1.35</td>
-        <td id="totalWeight4">—</td>
-        <td><input type="number" id="rate4" oninput="calculate(4)">
-        <td id="amount4">—</td>
-        <td><input type="text" id="remarks4"></td>
-      </tr>
-      <tr>
-  <td>Aluminium Track</td>
-  <td><input type="number" id="quantity5" readonly></td>
-  <td>—</td>
-  <td id="totalWeight5">—</td>
-  <td><input type="number" id="rate5" oninput="calculate(5)"></td>
-  <td id="amount5">—</td>
-  <td><input type="text" id="remarks5"></td>
-</tr>
-      <tr>
-  <tr>
-  <td>Loha</td>
-  <td><input type="number" id="quantity6" readonly></td>
-  <td>0.28</td>
-  <td id="totalWeight6">—</td>
-  <td><input type="number" id="rate6" oninput="calculate(6)"></td>
-  <td id="amount6">—</td>
-  <td><input type="text" id="remarks6"></td>
-</tr>
-</tr>
-
-<tr>
-  <td>CHAKKA</td>
-  <td><input type="number" id="quantity7" readonly></td>
-  <td>—</td>
-  <td id="totalWeight7">—</td>
-  <td><input type="number" id="rate7" oninput="calculate(7)"></td>
-  <td id="amount7">—</td>
-  <td><input type="text" id="remarks7"></td>
-</tr>
-
-<tr>
-  <td>T Brush</td>
-  <td><input type="number" id="quantity8" readonly></td>
-  <td>—</td>
-  <td id="totalWeight8">—</td>
-  <td><input type="number" id="rate8" oninput="calculate(8)"></td>
-  <td id="amount8">—</td>
-  <td><input type="text" id="remarks8"></td>
-</tr>
-
-<tr>
-  <td>T Screw etc</td>
-  <td><input type="number" id="quantity9" readonly></td>
-  <td>—</td>
-  <td id="totalWeight9">—</td>
-  <td>—</td>
-  <td id="amount9">—</td>
-  <td><input type="text" id="remarks9"></td>
-</tr>
-
-<tr>
-  <td>Touch lock</td>
-  <td><input type="number" id="quantity10" oninput="calculate(10)"></td>
-  <td>—</td>
-  <td id="totalWeight10">—</td>
-  <td><input type="number" id="rate10" oninput="calculate(10)"></td>
-  <td id="amount10">—</td>
-  <td><input type="text" id="remarks10"></td>
-</tr>
-
-<tr>
-  <td>Espage</td>
-  <td><input type="number" id="quantity11" oninput="calculate(11)"></td>
-  <td>—</td>
-  <td id="totalWeight11">—</td>
-  <td><input type="number" id="rate11" oninput="calculate(11)"></td>
-  <td id="amount11">—</td>
-  <td><input type="text" id="remarks11"></td>
-</tr>
-
-<tr>
-  <td>Jaali</td>
-  <td id="quantity12">—</td>
-  <td>—</td>
-  <td id="totalWeight12">—</td>
-  <td><input type="number" id="rate12" oninput="calculate(12)"></td>
-  <td id="amount12">—</td>
-  <td><input type="text" id="remarks12"></td>
-</tr>
-
-<tr>
-  <td>Glass</td>
-  <td id="quantity13">—</td>
-  <td>—</td>
-  <td id="totalWeight13">—</td>
-  <td><input type="number" id="rate13" oninput="calculate(13)"></td>
-  <td id="amount13">—</td>
-  <td><input type="text" id="remarks13"></td>
-</tr>
+</body>
 
 
-</tbody>
+
+
+
+
+  
