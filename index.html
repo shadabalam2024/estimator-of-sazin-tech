@@ -5,201 +5,196 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SAZIN TECH Pvt Ltd</title>
   
- <style>
+<style>
   body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #f3f4f6;
-  padding: 30px;
-  color: #333;
-  font-size: 20px; 
-  font-weight: 500;
-}
-
-h1 {
-  text-align: center;
-  color: #1a73e8;
-  margin-bottom: 5px;
-  font-size: 35px; 
-}
-
-h4 {
-  text-align: center;
-  color: #555;
-  margin-bottom: 20px;
-  font-size: 24px; 
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  table-layout: fixed;
-  margin-top: 15px;
-}
-
-th {
-  background-color: #1a73e8;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 18px; 
-  padding: 10px;
-}
-
-td {
-  text-align: center;
-  font-size: 18px; 
-  padding: 10px;
-  border-bottom: 1px solid #e0e0e0;
-  word-wrap: break-word;
-  overflow: hidden;
-}
-
-input {
-  width: 100%;
-  padding: 8px;
-  font-size: 18px; 
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-button {
-  width: 150px;
-  margin-top: 20px;
-  padding: 10px 20px; 
-  background-color: #1a73e8;
-  color: white;
-  font-size: 18px; 
-  font-weight: 600;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  transition: background-color 0.3s ease;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-button:hover {
-  background-color: #0f5ec9;
-}
-
-h3 {
-  text-align: right;
-  margin-top: 30px;
-  color: #111;
-  font-size: 25px;
-}
-
-#grandTotal {
-  font-weight: bold;
-  font-size: 25px;
-  color: #1a73e8;
-}
-
-.button-group {
-  display: flex;
-  justify-content: center;
-  gap: 12px; /* spacing between buttons */
-  margin-top: 25px;
-}
-
-.button-group button {
-  margin: 0; /* remove auto-centering from individual buttons */
-}
-@media print {
-  /* Force A4 page size */
-  @page {
-    size: A4;
-    margin: 20mm;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f3f4f6;
+    padding: 21px; /* 30 → 21 */
+    color: #333;
+    font-size: 14px; /* 20 → 14 */
+    font-weight: 500;
   }
 
-  /* General print cleanup */
-  body {
-    font-size: 14px;
-    padding: 0;
-    margin: 0;
-    color: #000;
+  h1 {
+    text-align: center;
+    color: #1a73e8;
+    margin-bottom: 3.5px; /* 5 → 3.5 */
+    font-size: 24.5px; /* 35 → 24.5 */
   }
 
-  input,
-  button,
-  .button-group,
-  #printProfileBtn {
-    display: none !important;
+  h4 {
+    text-align: center;
+    color: #555;
+    margin-bottom: 14px; /* 20 → 14 */
+    font-size: 16.8px; /* 24 → 16.8 */
   }
 
-  /* Ensure grandTotal value is visible */
-  #grandTotal {
-    display: inline;
-    font-weight: bold;
-    font-size: 16px;
-    color: #000;
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2.8px 8.4px rgba(0,0,0,0.1); /* scaled shadow */
+    table-layout: fixed;
+    margin-top: 10.5px; /* 15 → 10.5 */
+  }
+
+  th {
+    background-color: #1a73e8;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12.6px; /* 18 → 12.6 */
+    padding: 7px; /* 10 → 7 */
+  }
+
+  td {
+    text-align: center;
+    font-size: 12.6px; /* 18 → 12.6 */
+    padding: 7px; /* 10 → 7 */
+    border-bottom: 1px solid #e0e0e0;
+    word-wrap: break-word;
+    overflow: hidden;
+  }
+
+  input {
+    width: 100%;
+    padding: 5.6px; /* 8 → 5.6 */
+    font-size: 12.6px; /* 18 → 12.6 */
+    border: 1px solid #ccc;
+    border-radius: 2.8px; /* 4 → 2.8 */
+    box-sizing: border-box;
+  }
+
+  button {
+    width: 105px; /* 150 → 105 */
+    margin-top: 14px; /* 20 → 14 */
+    padding: 7px 14px; /* 10px 20px → 7px 14px */
+    background-color: #1a73e8;
+    color: white;
+    font-size: 12.6px; /* 18 → 12.6 */
+    font-weight: 600;
+    border: none;
+    border-radius: 4.2px; /* 6 → 4.2 */
+    cursor: pointer;
+    box-shadow: 0 1.4px 3.5px rgba(0,0,0,0.2); /* scaled shadow */
+    transition: background-color 0.3s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  button:hover {
+    background-color: #0f5ec9;
   }
 
   h3 {
     text-align: right;
-    margin-top: 20px;
-    font-size: 18px;
-    color: #000;
+    margin-top: 21px; /* 30 → 21 */
+    color: #111;
+    font-size: 17.5px; /* 25 → 17.5 */
   }
 
-  /* Print top section only */
-  #printSection {
-    display: block;
+  #grandTotal {
+    font-weight: bold;
+    font-size: 17.5px; /* 25 → 17.5 */
+    color: #1a73e8;
   }
 
-  #profileCostSection {
-    display: none;
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 8.4px; /* 12 → 8.4 */
+    margin-top: 17.5px; /* 25 → 17.5 */
   }
 
-  /* Print profile cost table only */
-  body.print-profile-only #printSection {
-    display: none;
+  .button-group button {
+    margin: 0;
   }
 
-  body.print-profile-only #profileCostSection {
-    display: block;
-    width: 100%;
-    max-width: 180mm;
-    margin: 0 auto;
-    page-break-inside: avoid;
-  }
+  @media print {
+    @page {
+      size: A4;
+      margin: 20mm;
+    }
 
-  /* Print only the profile quantity table */
-  body.print-quantity-only #printSection,
-  body.print-quantity-only #profileCostSection {
-    display: none;
-  }
+    body {
+      font-size: 9.8px; /* 14 → 9.8 */
+      padding: 0;
+      margin: 0;
+      color: #000;
+    }
 
-  body.print-quantity-only #profileQuantitySection {
-    display: block;
-    width: 100%;
-    max-width: 180mm; /* A4 width minus margins */
-    margin: 0 auto;
-    page-break-inside: avoid;
-  }
+    input,
+    button,
+    .button-group,
+    #printProfileBtn {
+      display: none !important;
+    }
 
-  /* Table styling */
-  table {
-    width: 100%;
-    table-layout: fixed;
-    font-size: 12px;
-    box-shadow: none;
-    border-collapse: collapse;
-  }
+    #grandTotal {
+      display: inline;
+      font-weight: bold;
+      font-size: 11.2px; /* 16 → 11.2 */
+      color: #000;
+    }
 
-  th,
-  td {
-    padding: 6px;
-    font-size: 12px;
-    border: 1px solid #ccc;
-    word-wrap: break-word;
+    h3 {
+      text-align: right;
+      margin-top: 14px; /* 20 → 14 */
+      font-size: 12.6px; /* 18 → 12.6 */
+      color: #000;
+    }
+
+    #printSection {
+      display: block;
+    }
+
+    #profileCostSection {
+      display: none;
+    }
+
+    body.print-profile-only #printSection {
+      display: none;
+    }
+
+    body.print-profile-only #profileCostSection {
+      display: block;
+      width: 100%;
+      max-width: 180mm;
+      margin: 0 auto;
+      page-break-inside: avoid;
+    }
+
+    body.print-quantity-only #printSection,
+    body.print-quantity-only #profileCostSection {
+      display: none;
+    }
+
+    body.print-quantity-only #profileQuantitySection {
+      display: block;
+      width: 100%;
+      max-width: 180mm;
+      margin: 0 auto;
+      page-break-inside: avoid;
+    }
+
+    table {
+      width: 100%;
+      table-layout: fixed;
+      font-size: 8.4px; /* 12 → 8.4 */
+      box-shadow: none;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 4.2px; /* 6 → 4.2 */
+      font-size: 8.4px;
+      border: 1px solid #ccc;
+      word-wrap: break-word;
+    }
   }
-}
- </style>
+</style>
+
 
 
  
