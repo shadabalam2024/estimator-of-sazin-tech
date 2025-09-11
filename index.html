@@ -98,6 +98,7 @@ h3 {
   font-size: 25px;
   color: #1a73e8;
 }
+
 .button-group {
   display: flex;
   justify-content: center;
@@ -109,19 +110,40 @@ h3 {
   margin: 0; /* remove auto-centering from individual buttons */
 }
 @media print {
+  /* Force A4 page size */
+  @page {
+    size: A4;
+    margin: 20mm;
+  }
+
   /* General print cleanup */
   body {
     font-size: 14px;
-    padding: 20px;
+    padding: 0;
+    margin: 0;
     color: #000;
   }
 
-  input, button {
-    display: none;
+  input,
+  button,
+  .button-group,
+  #printProfileBtn {
+    display: none !important;
   }
 
-  .button-group, #grandTotal {
-    display: none;
+  /* Ensure grandTotal value is visible */
+  #grandTotal {
+    display: inline;
+    font-weight: bold;
+    font-size: 16px;
+    color: #000;
+  }
+
+  h3 {
+    text-align: right;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #000;
   }
 
   /* Print top section only */
@@ -133,29 +155,50 @@ h3 {
     display: none;
   }
 
-  /* OR: Print profile cost table only */
+  /* Print profile cost table only */
   body.print-profile-only #printSection {
     display: none;
   }
 
   body.print-profile-only #profileCostSection {
     display: block;
+    width: 100%;
+    max-width: 180mm;
+    margin: 0 auto;
+    page-break-inside: avoid;
+  }
+
+  /* Print only the profile quantity table */
+  body.print-quantity-only #printSection,
+  body.print-quantity-only #profileCostSection {
+    display: none;
+  }
+
+  body.print-quantity-only #profileQuantitySection {
+    display: block;
+    width: 100%;
+    max-width: 180mm; /* A4 width minus margins */
+    margin: 0 auto;
+    page-break-inside: avoid;
   }
 
   /* Table styling */
   table {
     width: 100%;
-    font-size: 13px;
+    table-layout: fixed;
+    font-size: 12px;
     box-shadow: none;
+    border-collapse: collapse;
   }
 
-  th, td {
+  th,
+  td {
     padding: 6px;
-    font-size: 13px;
+    font-size: 12px;
     border: 1px solid #ccc;
+    word-wrap: break-word;
   }
 }
-
  </style>
 
 
@@ -414,7 +457,7 @@ h3 {
         <th>S No.</th>
         <th>Profile Size</th>
         <th>Cost</th>
-        <th>Action</th>
+        
       </tr>
     </thead>
     <tbody>
@@ -422,9 +465,38 @@ h3 {
     </tbody>
   </table>
 
-  <button id="printProfileBtn">Print</button>
-</div>
+  
+
 <h3>Grand Total: <span id="grandTotal">0.00</span></h3>
+<button id="printProfileBtn">Print</button>
+
+
+
+</div>
+
+
+<h1>Profile Quantity Table</h1>
+<div id="profileQuantitySection">
+  <table id="profileQuantityTable">
+  <thead>
+    <tr>
+      <th>Profile</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Rows will be added dynamically -->
+  </tbody>
+</table>
+</div>
+<button id="printQuantityTableBtn">Print</button>
+
+
+
+
+
+
+
 
 
 
@@ -745,7 +817,8 @@ function calculateTotalAmount() {
     
   
 
-  document.getElementById("addBtn").addEventListener("click", () => {
+ document.getElementById("addBtn").addEventListener("click", () => {
+  // === Existing logic: Add row to profileCostTable ===
   const tableBody = document.querySelector("#profileCostTable tbody");
 
   const lengthFtCell = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(3)");
@@ -793,13 +866,32 @@ function calculateTotalAmount() {
   newRow.appendChild(serialCell);
   newRow.appendChild(sizeCell);
   newRow.appendChild(costCell);
-  newRow.appendChild(deleteCell);
+  <!-- newRow.appendChild(deleteCell); -->
 
   tableBody.appendChild(newRow);
 
   updateGrandTotal();
-});
 
+  // === New logic: Update profileQuantityTable quantities ===
+  const sourceRows = document.querySelectorAll("#profileTable tbody tr");
+  const targetRows = document.querySelectorAll("#profileQuantityTable tbody tr");
+
+  sourceRows.forEach(sourceRow => {
+    const sourceProfile = sourceRow.cells[0]?.textContent.trim();
+    const sourceQtyInput = sourceRow.cells[1]?.querySelector("input");
+    const sourceQty = parseFloat(sourceQtyInput?.value) || 0;
+
+    targetRows.forEach(targetRow => {
+      const targetProfile = targetRow.cells[0]?.textContent.trim();
+      const targetQtyInput = targetRow.cells[1]?.querySelector("input");
+
+      if (targetProfile === sourceProfile && targetQtyInput) {
+        const currentQty = parseFloat(targetQtyInput.value) || 0;
+        targetQtyInput.value = currentQty + sourceQty;
+      }
+    });
+  });
+});
 function updateGrandTotal() {
   let grandTotal = 0;
   document.querySelectorAll("#profileCostTable tbody tr").forEach(row => {
@@ -830,7 +922,49 @@ document.getElementById("printProfileBtn").addEventListener("click", () => {
   location.reload(); // restore event listeners
 });
     
-    
+
+window.addEventListener("DOMContentLoaded", () => {
+  const profileRows = document.querySelectorAll("#profileTable tbody tr");
+  const quantityTableBody = document.querySelector("#profileQuantityTable tbody");
+
+  quantityTableBody.innerHTML = ""; // Clear any existing rows
+
+  profileRows.forEach(row => {
+    const profileCell = row.cells[0]; // First column: Profile name
+    if (!profileCell) return;
+
+    const profileName = profileCell.textContent.trim().toLowerCase();
+
+    // Skip summary rows
+    const skipLabels = [
+      "subtotal",
+      "gst",
+      "labour rate",
+      "installation rate",
+      "sazin rate",
+      "total amount"
+    ];
+
+    const isSummaryRow = skipLabels.some(label => profileName.includes(label));
+    if (isSummaryRow) return;
+
+    // Add valid profile row
+    const newRow = document.createElement("tr");
+    newRow.innerHTML = `
+      <td>${profileCell.textContent.trim()}</td>
+      <td><input type="number" min="0" placeholder="Enter quantity" /></td>
+    `;
+    quantityTableBody.appendChild(newRow);
+  });
+});
+
+document.getElementById("printQuantityTableBtn").addEventListener("click", () => {
+  document.body.classList.add("print-quantity-only");
+  window.print();
+  document.body.classList.remove("print-quantity-only");
+});
+
+
   </script>
 </body>
 
