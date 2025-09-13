@@ -195,9 +195,6 @@
   }
 </style>
 
-
-
- 
 </head>
 <body>
   <div id="printSection">
@@ -206,7 +203,6 @@
     D-10, Industrial Area, New Siwan, Phase 1, Hardiya More<br>
     Opposite Paani Tanki, Siwan Bihar, PIN-841226
   </h4>
-
 
     <!-- First Table: Dimensions -->
   <table id="dimensionTable">
@@ -281,158 +277,139 @@
         <td><input type="text" id="remarks4"></td>
       </tr>
       <tr>
-  <td>Aluminium Track</td>
-  <td><input type="number" id="quantity5" ></td>
-  <td>—</td>
-  <td id="totalWeight5">—</td>
-  <td><input type="number" id="rate5" oninput="calculate(5)"></td>
-  <td id="amount5">—</td>
-  <td><input type="text" id="remarks5"></td>
-</tr>
+        <td>Aluminium Track</td>
+        <td><input type="number" id="quantity5" ></td>
+        <td>—</td>
+        <td id="totalWeight5">—</td>
+        <td><input type="number" id="rate5" oninput="calculate(5)"></td>
+        <td id="amount5">—</td>
+        <td><input type="text" id="remarks5"></td>
+      </tr>
       <tr>
-  <tr>
-  <td>Loha</td>
-  <td><input value="8" type="number" id="quantity6" ></td>
-  <td>0.28</td>
-  <td id="totalWeight6">—</td>
-  <td><input type="number" id="rate6" oninput="calculate(6)"></td>
-  <td id="amount6">—</td>
-  <td><input type="text" id="remarks6"></td>
-</tr>
-</tr>
-
-<tr>
-  <td>CHAKKA</td>
-  <td><input type="number" id="quantity7" ></td>
-  <td>—</td>
-  <td id="totalWeight7">—</td>
-  <td><input type="number" id="rate7" oninput="calculate(7)"></td>
-  <td id="amount7">—</td>
-  <td><input type="text" id="remarks7"></td>
-</tr>
-
-<tr>
-  <td>T Brush</td>
-  <td><input type="number" id="quantity8" ></td>
-  <td>—</td>
-  <td id="totalWeight8">—</td>
-  <td><input type="number" id="rate8" oninput="calculate(8)"></td>
-  <td id="amount8">—</td>
-  <td><input type="text" id="remarks8"></td>
-</tr>
-
-<tr>
-  <td>T Screw etc</td>
-  <td><input type="number" id="quantity9" ></td>
-  <td>—</td>
-  <td id="totalWeight9">—</td>
-  <td>—</td>
-  <td id="amount9">—</td>
-  <td><input type="text" id="remarks9"></td>
-</tr>
-
-<tr>
-  <td>Touch lock</td>
-  <td><input type="number" value="2" id="quantity10" oninput="calculate(10)"></td>
-  <td>—</td>
-  <td id="totalWeight10">—</td>
-  <td><input type="number" id="rate10" oninput="calculate(10)"></td>
-  <td id="amount10">—</td>
-  <td><input type="text" id="remarks10"></td>
-</tr>
-
-<tr>
-  <td>Espage</td>
-  <td><input type="number" id="quantity11" oninput="calculate(11)"></td>
-  <td>—</td>
-  <td id="totalWeight11">—</td>
-  <td><input type="number" id="rate11" oninput="calculate(11)"></td>
-  <td id="amount11">—</td>
-  <td><input type="text" id="remarks11"></td>
-</tr>
-
-<tr>
-  <td>Jaali</td>
-  <td id="quantity12">—</td>
-  <td>—</td>
-  <td id="totalWeight12">—</td>
-  <td><input type="number" id="rate12" oninput="calculate(12)"></td>
-  <td id="amount12">—</td>
-  <td><input type="text" id="remarks12"></td>
-</tr>
-
-<tr>
-  <td>Glass</td>
-  <td id="quantity13">—</td>
-  <td>—</td>
-  <td id="totalWeight13">—</td>
-  <td><input type="number" id="rate13" oninput="calculate(13)"></td>
-  <td id="amount13">—</td>
-  <td><input type="text" id="remarks13"></td>
-</tr>
-
-<tr>
-  <td>KEEP</td>
-  <td><input value="2" type="number" id="quantity14" oninput="calculate(14)"></td>
-  <td>—</td>
-  <td id="totalWeight14">—</td>
-  <td><input type="number" id="rate14" oninput="calculate(14)"></td>
-  <td id="amount14">—</td>
-  <td><input type="text" id="remarks14"></td>
-</tr>
-
-<tr>
-  <td>Fastener</td>
-  <td><input value="8" type="number" id="quantity15" oninput="calculate(15)"></td>
-  <td>—</td>
-  <td id="totalWeight15">—</td>
-  <td><input type="number" id="rate15" oninput="calculate(15)"></td>
-  <td id="amount15">—</td>
-  <td><input type="text" id="remarks15"></td>
-</tr>
-
-<tr style="font-weight: bold; background-color: #f0f0f0;">
-  <td colspan="5" style="text-align: right;">Subtotal</td>
-  <td id="subtotalAmount">—</td>
-  <td></td>
-</tr>
-
-<tr>
-  <td colspan="5" style="text-align: right;">GST (18%)</td>
-  <td id="gstAmount">—</td>
-  <td></td>
-</tr>
-
-
-<tr>
-  <td colspan="4" style="text-align: right;">Labour Rate (₹/sq ft)</td>
-  <td><input type="number" id="labourRate" value="30" oninput="calculateLabourCharge()"></td>
-  <td id="labourCharge">—</td>
-  <td></td>
-</tr>
-
-
-<tr>
-  <td colspan="4" style="text-align: right;">Installation Rate (₹/sq ft)</td>
-  <td><input type="number" id="installationRate" value="22" oninput="calculateInstallationCharge()"></td>
-  <td id="installationCharge">—</td>
-  <td></td>
-</tr>
-
-<tr>
-  <td colspan="4" style="text-align: right;">SAZIN Rate (₹/sq ft)</td>
-  <td><input type="number" id="sazinRate" value="30" oninput="calculateSazinCharge()"></td>
-  <td id="sazinCharge">—</td>
-  <td></td>
-</tr>
-
-<tr style="font-weight: bold; background-color: #e8f4ff;">
-  <td colspan="5" style="text-align: right;">Total Amount</td>
-  <td id="totalAmount">—</td>
-  <td></td>
-</tr>
-</tbody>
-</table>
+        <td>Loha</td>
+        <td><input value="8" type="number" id="quantity6" ></td>
+        <td>0.28</td>
+        <td id="totalWeight6">—</td>
+        <td><input type="number" id="rate6" oninput="calculate(6)"></td>
+        <td id="amount6">—</td>
+        <td><input type="text" id="remarks6"></td>
+      </tr>
+      <tr>
+        <td>CHAKKA</td>
+        <td><input type="number" id="quantity7" ></td>
+        <td>—</td>
+        <td id="totalWeight7">—</td>
+        <td><input type="number" id="rate7" oninput="calculate(7)"></td>
+        <td id="amount7">—</td>
+        <td><input type="text" id="remarks7"></td>
+      </tr>
+      <tr>
+        <td>T Brush</td>
+        <td><input type="number" id="quantity8" ></td>
+        <td>—</td>
+        <td id="totalWeight8">—</td>
+        <td><input type="number" id="rate8" oninput="calculate(8)"></td>
+        <td id="amount8">—</td>
+        <td><input type="text" id="remarks8"></td>
+      </tr>
+      <tr>
+        <td>T Screw etc</td>
+        <td><input type="number" id="quantity9" ></td>
+        <td>—</td>
+        <td id="totalWeight9">—</td>
+        <td>—</td>
+        <td id="amount9">—</td>
+        <td><input type="text" id="remarks9"></td>
+      </tr>
+      <tr>
+        <td>Touch lock</td>
+        <td><input type="number" value="2" id="quantity10" oninput="calculate(10)"></td>
+        <td>—</td>
+        <td id="totalWeight10">—</td>
+        <td><input type="number" id="rate10" oninput="calculate(10)"></td>
+        <td id="amount10">—</td>
+        <td><input type="text" id="remarks10"></td>
+      </tr>
+      <tr>
+        <td>Espage</td>
+        <td><input type="number" id="quantity11" oninput="calculate(11)"></td>
+        <td>—</td>
+        <td id="totalWeight11">—</td>
+        <td><input type="number" id="rate11" oninput="calculate(11)"></td>
+        <td id="amount11">—</td>
+        <td><input type="text" id="remarks11"></td>
+      </tr>
+      <tr>
+        <td>Jaali</td>
+        <td id="quantity12">—</td>
+        <td>—</td>
+        <td id="totalWeight12">—</td>
+        <td><input type="number" id="rate12" oninput="calculate(12)"></td>
+        <td id="amount12">—</td>
+        <td><input type="text" id="remarks12"></td>
+      </tr>
+      <tr>
+        <td>Glass</td>
+        <td id="quantity13">—</td>
+        <td>—</td>
+        <td id="totalWeight13">—</td>
+        <td><input type="number" id="rate13" oninput="calculate(13)"></td>
+        <td id="amount13">—</td>
+        <td><input type="text" id="remarks13"></td>
+      </tr>
+      <tr>
+        <td>KEEP</td>
+        <td><input value="2" type="number" id="quantity14" oninput="calculate(14)"></td>
+        <td>—</td>
+        <td id="totalWeight14">—</td>
+        <td><input type="number" id="rate14" oninput="calculate(14)"></td>
+        <td id="amount14">—</td>
+        <td><input type="text" id="remarks14"></td>
+      </tr>
+      <tr>
+        <td>Fastener</td>
+        <td><input value="8" type="number" id="quantity15" oninput="calculate(15)"></td>
+        <td>—</td>
+        <td id="totalWeight15">—</td>
+        <td><input type="number" id="rate15" oninput="calculate(15)"></td>
+        <td id="amount15">—</td>
+        <td><input type="text" id="remarks15"></td>
+      </tr>
+      <tr style="font-weight: bold; background-color: #f0f0f0;">
+        <td colspan="5" style="text-align: right;">Subtotal</td>
+        <td id="subtotalAmount">—</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="5" style="text-align: right;">GST (18%)</td>
+        <td id="gstAmount">—</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="4" style="text-align: right;">Labour Rate (₹/sq ft)</td>
+        <td><input type="number" id="labourRate" value="30" oninput="calculateLabourCharge()"></td>
+        <td id="labourCharge">—</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="4" style="text-align: right;">Installation Rate (₹/sq ft)</td>
+        <td><input type="number" id="installationRate" value="22" oninput="calculateInstallationCharge()"></td>
+        <td id="installationCharge">—</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="4" style="text-align: right;">SAZIN Rate (₹/sq ft)</td>
+        <td><input type="number" id="sazinRate" value="30" oninput="calculateSazinCharge()"></td>
+        <td id="sazinCharge">—</td>
+        <td></td>
+      </tr>
+      <tr style="font-weight: bold; background-color: #e8f4ff;">
+        <td colspan="5" style="text-align: right;">Total Amount</td>
+        <td id="totalAmount">—</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <div class="button-group">
@@ -452,7 +429,6 @@
         <th>S No.</th>
         <th>Profile Size</th>
         <th>Cost</th>
-        
       </tr>
     </thead>
     <tbody>
@@ -460,16 +436,10 @@
     </tbody>
   </table>
 
-  
-
 <h3>Grand Total: <span id="grandTotal">0.00</span></h3>
 <button id="printProfileBtn">Print</button>
 
-
-
 </div>
-  <br>
-
 
 <h1>Profile Quantity Table</h1>
 <div id="profileQuantitySection">
@@ -486,20 +456,6 @@
 </table>
 </div>
 <button id="printQuantityTableBtn">Print</button>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
  <script>
     let lengthMm = 0;
@@ -547,38 +503,31 @@
       calculateSazinCharge();
     }
 
-
     function calculateGST() {
-  const subtotal = parseFloat(document.getElementById("subtotalAmount").textContent) || 0;
-  const gstRate = 18; // Fixed GST %
-  const gstAmount = subtotal * (gstRate / 100);
+      const subtotal = parseFloat(document.getElementById("subtotalAmount").textContent) || 0;
+      const gstRate = 18; // Fixed GST %
+      const gstAmount = subtotal * (gstRate / 100);
 
-  document.getElementById("gstAmount").textContent = gstAmount.toFixed(2);
-}
-
-function calculateSubtotal() {
-  let subtotal = 0;
-
-  for (let i = 1; i <= 15; i++) {
-    const amountCell = document.getElementById(`amount${i}`);
-    if (amountCell) {
-      const amount = parseFloat(amountCell.textContent) || 0;
-      subtotal += amount;
+      document.getElementById("gstAmount").textContent = gstAmount.toFixed(2);
     }
-  }
 
-  document.getElementById("subtotalAmount").textContent = subtotal.toFixed(2);
-  calculateGST(); // calculation of gst
+    function calculateSubtotal() {
+      let subtotal = 0;
 
-  calculateTotalAmount();
+      for (let i = 1; i <= 15; i++) {
+        const amountCell = document.getElementById(`amount${i}`);
+        if (amountCell) {
+          const amount = parseFloat(amountCell.textContent) || 0;
+          subtotal += amount;
+        }
+      }
 
-
-}
-
-
+      document.getElementById("subtotalAmount").textContent = subtotal.toFixed(2);
+      calculateGST(); // calculation of gst
+      calculateTotalAmount();
+    }
 
     function calculate(index) {
-
       const quantity1 = parseFloat(document.getElementById("quantity1").value) || 0;
 
       if (index === 1) {
@@ -638,170 +587,170 @@ function calculateSubtotal() {
       }
 
       if (index === 5) {
-  const quantity5 = (widthMm*2 / 1000) * 3;
-  document.getElementById("quantity5").value = quantity5.toFixed(2);
+        const quantity5 = (widthMm*2 / 1000) * 3;
+        document.getElementById("quantity5").value = quantity5.toFixed(2);
 
-  const rate5 = parseFloat(document.getElementById("rate5").value) || 0;
-  const totalWeight5 = quantity5;
-  const amount5 = totalWeight5 * rate5;
+        const rate5 = parseFloat(document.getElementById("rate5").value) || 0;
+        const totalWeight5 = quantity5;
+        const amount5 = totalWeight5 * rate5;
 
-  document.getElementById("totalWeight5").textContent = totalWeight5.toFixed(2);
-  document.getElementById("amount5").textContent = amount5.toFixed(2);
-}
-if (index === 6) {
-  const lengthFt = mmToFeet(lengthMm);
-  const widthFt = mmToFeet(widthMm);
-  const quantity6 = (lengthFt*2 + widthFt*2) / 3;
-  const weightPerLength6 = 0.28;
-  const rate6 = parseFloat(document.getElementById("rate6").value) || 0;
+        document.getElementById("totalWeight5").textContent = totalWeight5.toFixed(2);
+        document.getElementById("amount5").textContent = amount5.toFixed(2);
+      }
 
-  const totalWeight6 = quantity6 * weightPerLength6;
-  const amount6 = totalWeight6 * rate6;
+      if (index === 6) {
+        const lengthFt = mmToFeet(lengthMm);
+        const widthFt = mmToFeet(widthMm);
+        const quantity6 = (lengthFt*2 + widthFt*2) / 3;
+        const weightPerLength6 = 0.28;
+        const rate6 = parseFloat(document.getElementById("rate6").value) || 0;
 
-  document.getElementById("quantity6").value = quantity6.toFixed(2);
-  document.getElementById("totalWeight6").textContent = totalWeight6.toFixed(2);
-  document.getElementById("amount6").textContent = amount6.toFixed(2);
-}
-if (index === 7) {
-  const totalWindowInput = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(7) input");
-  const totalWindow = parseFloat(totalWindowInput.value) || 0;
-  const quantity7 = totalWindow * 6;
-  const rate7 = parseFloat(document.getElementById("rate7").value) || 0;
-  const amount7 = quantity7 * rate7;
+        const totalWeight6 = quantity6 * weightPerLength6;
+        const amount6 = totalWeight6 * rate6;
 
-  document.getElementById("quantity7").value = quantity7.toFixed(2);
-  document.getElementById("totalWeight7").textContent = "—";
-  document.getElementById("amount7").textContent = amount7.toFixed(2);
-}
-if (index === 8) {
-  const perimeterCell = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(5)");
-  const perimeter = parseFloat(perimeterCell.textContent) || 0;
-  const quantity8 = (perimeter) * 3;
-  const rate8 = parseFloat(document.getElementById("rate8").value) || 0;
-  const amount8 = quantity8 * rate8;
+        document.getElementById("quantity6").value = quantity6.toFixed(2);
+        document.getElementById("totalWeight6").textContent = totalWeight6.toFixed(2);
+        document.getElementById("amount6").textContent = amount6.toFixed(2);
+      }
 
-  document.getElementById("quantity8").value = quantity8.toFixed(2);
-  document.getElementById("totalWeight8").textContent = "—";
-  document.getElementById("amount8").textContent = amount8.toFixed(2);
-}
-if (index === 9) {
-  const totalWindowInput = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(7) input");
-  const totalWindow = parseFloat(totalWindowInput.value) || 0;
-  const quantity9 = totalWindow * 80;
+      if (index === 7) {
+        const totalWindowInput = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(7) input");
+        const totalWindow = parseFloat(totalWindowInput.value) || 0;
+        const quantity7 = totalWindow * 6;
+        const rate7 = parseFloat(document.getElementById("rate7").value) || 0;
+        const amount7 = quantity7 * rate7;
 
-  document.getElementById("quantity9").value = quantity9.toFixed(2);
-  document.getElementById("totalWeight9").textContent = "—";
-  document.getElementById("amount9").textContent = quantity9.toFixed(2);
-}
-if (index === 10) {
-  const quantity10 = parseFloat(document.getElementById("quantity10").value) || 0;
-  const rate10 = parseFloat(document.getElementById("rate10").value) || 0;
-  const amount10 = quantity10 * rate10;
+        document.getElementById("quantity7").value = quantity7.toFixed(2);
+        document.getElementById("totalWeight7").textContent = "—";
+        document.getElementById("amount7").textContent = amount7.toFixed(2);
+      }
 
-  document.getElementById("totalWeight10").textContent = "—";
-  document.getElementById("amount10").textContent = amount10.toFixed(2);
-}
+      if (index === 8) {
+        const perimeterCell = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(5)");
+        const perimeter = parseFloat(perimeterCell.textContent) || 0;
+        const quantity8 = (perimeter) * 3;
+        const rate8 = parseFloat(document.getElementById("rate8").value) || 0;
+        const amount8 = quantity8 * rate8;
 
-if (index === 11) {
-  const quantity11 = parseFloat(document.getElementById("quantity11").value) || 0;
-  const rate11 = parseFloat(document.getElementById("rate11").value) || 0;
-  const amount11 = quantity11 * rate11;
+        document.getElementById("quantity8").value = quantity8.toFixed(2);
+        document.getElementById("totalWeight8").textContent = "—";
+        document.getElementById("amount8").textContent = amount8.toFixed(2);
+      }
 
-  document.getElementById("totalWeight11").textContent = "—";
-  document.getElementById("amount11").textContent = amount11.toFixed(2);
-}
+      if (index === 9) {
+        const totalWindowInput = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(7) input");
+        const totalWindow = parseFloat(totalWindowInput.value) || 0;
+        const quantity9 = totalWindow * 80;
 
-if (index === 12) {
-  const areaCell = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(6)");
-  const area = parseFloat(areaCell.textContent) || 0;
-  const quantity12 = area / 3;
-  const rate12 = parseFloat(document.getElementById("rate12").value) || 0;
-  const amount12 = quantity12 * rate12;
+        document.getElementById("quantity9").value = quantity9.toFixed(2);
+        document.getElementById("totalWeight9").textContent = "—";
+        document.getElementById("amount9").textContent = quantity9.toFixed(2);
+      }
 
-  document.getElementById("quantity12").textContent = quantity12.toFixed(2);
-  document.getElementById("totalWeight12").textContent = "—";
-  document.getElementById("amount12").textContent = amount12.toFixed(2);
-}
+      if (index === 10) {
+        const quantity10 = parseFloat(document.getElementById("quantity10").value) || 0;
+        const rate10 = parseFloat(document.getElementById("rate10").value) || 0;
+        const amount10 = quantity10 * rate10;
 
-if (index === 13) {
-  const areaCell = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(6)");
-  const area = parseFloat(areaCell.textContent) || 0;
-  const jaaliQuantity = area / 3;
-  const quantity13 = jaaliQuantity * 3;
-  const rate13 = parseFloat(document.getElementById("rate13").value) || 0;
-  const amount13 = quantity13 * rate13;
+        document.getElementById("totalWeight10").textContent = "—";
+        document.getElementById("amount10").textContent = amount10.toFixed(2);
+      }
 
-  document.getElementById("quantity13").textContent = quantity13.toFixed(2);
-  document.getElementById("totalWeight13").textContent = "—";
-  document.getElementById("amount13").textContent = amount13.toFixed(2);
-}
-if (index === 14) {
-  const quantity14 = parseFloat(document.getElementById("quantity14").value) || 0;
-  const rate14 = parseFloat(document.getElementById("rate14").value) || 0;
-  const amount14 = quantity14 * rate14;
+      if (index === 11) {
+        const quantity11 = parseFloat(document.getElementById("quantity11").value) || 0;
+        const rate11 = parseFloat(document.getElementById("rate11").value) || 0;
+        const amount11 = quantity11 * rate11;
 
-  document.getElementById("totalWeight14").textContent = "—";
-  document.getElementById("amount14").textContent = amount14.toFixed(2);
-}
-if (index === 15) {
-  const quantity = parseFloat(document.getElementById("quantity15").value) || 0;
-  const rate = parseFloat(document.getElementById("rate15").value) || 0;
-  const amount = quantity * rate;
+        document.getElementById("totalWeight11").textContent = "—";
+        document.getElementById("amount11").textContent = amount11.toFixed(2);
+      }
 
-  document.getElementById("totalWeight15").textContent = "—";
-  document.getElementById("amount15").textContent = amount.toFixed(2);
-}
-  calculateSubtotal();
+      if (index === 12) {
+        const areaCell = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(6)");
+        const area = parseFloat(areaCell.textContent) || 0;
+        const quantity12 = area / 3;
+        const rate12 = parseFloat(document.getElementById("rate12").value) || 0;
+        const amount12 = quantity12 * rate12;
 
+        document.getElementById("quantity12").textContent = quantity12.toFixed(2);
+        document.getElementById("totalWeight12").textContent = "—";
+        document.getElementById("amount12").textContent = amount12.toFixed(2);
+      }
+
+      if (index === 13) {
+        const areaCell = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(6)");
+        const area = parseFloat(areaCell.textContent) || 0;
+        const jaaliQuantity = area / 3;
+        const quantity13 = jaaliQuantity * 3;
+        const rate13 = parseFloat(document.getElementById("rate13").value) || 0;
+        const amount13 = quantity13 * rate13;
+
+        document.getElementById("quantity13").textContent = quantity13.toFixed(2);
+        document.getElementById("totalWeight13").textContent = "—";
+        document.getElementById("amount13").textContent = amount13.toFixed(2);
+      }
+
+      if (index === 14) {
+        const quantity14 = parseFloat(document.getElementById("quantity14").value) || 0;
+        const rate14 = parseFloat(document.getElementById("rate14").value) || 0;
+        const amount14 = quantity14 * rate14;
+
+        document.getElementById("totalWeight14").textContent = "—";
+        document.getElementById("amount14").textContent = amount14.toFixed(2);
+      }
+
+      if (index === 15) {
+        const quantity = parseFloat(document.getElementById("quantity15").value) || 0;
+        const rate = parseFloat(document.getElementById("rate15").value) || 0;
+        const amount = quantity * rate;
+
+        document.getElementById("totalWeight15").textContent = "—";
+        document.getElementById("amount15").textContent = amount.toFixed(2);
+      }
+
+      calculateSubtotal();
     }
 
-
-
     function calculateLabourCharge() {
-  const areaCell = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(6)");
-  const area = parseFloat(areaCell.textContent) || 0;
-  const labourRate = parseFloat(document.getElementById("labourRate").value) || 0;
-  const labourCharge = area * labourRate;
+      const areaCell = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(6)");
+      const area = parseFloat(areaCell.textContent) || 0;
+      const labourRate = parseFloat(document.getElementById("labourRate").value) || 0;
+      const labourCharge = area * labourRate;
 
-  document.getElementById("labourCharge").textContent = labourCharge.toFixed(2);
-  calculateTotalAmount();
-}
+      document.getElementById("labourCharge").textContent = labourCharge.toFixed(2);
+      calculateTotalAmount();
+    }
 
+    function calculateInstallationCharge() {
+      const areaCell = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(6)");
+      const area = parseFloat(areaCell.textContent) || 0;
+      const installationRate = parseFloat(document.getElementById("installationRate").value) || 0;
+      const installationCharge = area * installationRate;
 
-  function calculateInstallationCharge() {
-  const areaCell = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(6)");
-  const area = parseFloat(areaCell.textContent) || 0;
-  const installationRate = parseFloat(document.getElementById("installationRate").value) || 0;
-  const installationCharge = area * installationRate;
+      document.getElementById("installationCharge").textContent = installationCharge.toFixed(2);
+      calculateTotalAmount();
+    }
 
-  document.getElementById("installationCharge").textContent = installationCharge.toFixed(2);
-  calculateTotalAmount();
-}
+    function calculateSazinCharge() {
+      const areaCell = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(6)");
+      const area = parseFloat(areaCell.textContent) || 0;
+      const sazinRate = parseFloat(document.getElementById("sazinRate").value) || 0;
+      const sazinCharge = area * sazinRate;
 
+      document.getElementById("sazinCharge").textContent = sazinCharge.toFixed(2);
+      calculateTotalAmount();
+    }
 
-  function calculateSazinCharge() {
-  const areaCell = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(6)");
-  const area = parseFloat(areaCell.textContent) || 0;
-  const sazinRate = parseFloat(document.getElementById("sazinRate").value) || 0;
-  const sazinCharge = area * sazinRate;
+    function calculateTotalAmount() {
+      const subtotal = parseFloat(document.getElementById("subtotalAmount").textContent) || 0;
+      const gst = parseFloat(document.getElementById("gstAmount").textContent) || 0;
+      const labour = parseFloat(document.getElementById("labourCharge").textContent) || 0;
+      const installation = parseFloat(document.getElementById("installationCharge").textContent) || 0;
+      const sazin = parseFloat(document.getElementById("sazinCharge").textContent) || 0;
 
-  document.getElementById("sazinCharge").textContent = sazinCharge.toFixed(2);
-  calculateTotalAmount();
-}
-
-
-function calculateTotalAmount() {
-  const subtotal = parseFloat(document.getElementById("subtotalAmount").textContent) || 0;
-  const gst = parseFloat(document.getElementById("gstAmount").textContent) || 0;
-  const labour = parseFloat(document.getElementById("labourCharge").textContent) || 0;
-  const installation = parseFloat(document.getElementById("installationCharge").textContent) || 0;
-  const sazin = parseFloat(document.getElementById("sazinCharge").textContent) || 0;
-
-  const total = subtotal + gst + labour + installation + sazin;
-  document.getElementById("totalAmount").textContent = total.toFixed(2);
-}
-
-
+      const total = subtotal + gst + labour + installation + sazin;
+      document.getElementById("totalAmount").textContent = total.toFixed(2);
+    }
 
     window.addEventListener("DOMContentLoaded", () => {
       const inputs = document.querySelectorAll("#dimensionTable input");
@@ -810,163 +759,170 @@ function calculateTotalAmount() {
       });
     });
 
+    // === FIXED PRINT FUNCTIONS - NO MORE PAGE REFRESH ===
     
-  
+    document.getElementById("addBtn").addEventListener("click", () => {
+      // === Existing logic: Add row to profileCostTable ===
+      const tableBody = document.querySelector("#profileCostTable tbody");
 
- document.getElementById("addBtn").addEventListener("click", () => {
-  // === Existing logic: Add row to profileCostTable ===
-  const tableBody = document.querySelector("#profileCostTable tbody");
+      const lengthFtCell = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(3)");
+      const widthFtCell = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(4)");
 
-  const lengthFtCell = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(3)");
-  const widthFtCell = document.querySelector("#dimensionTable tr:nth-child(2) td:nth-child(4)");
+      const lengthFt = parseFloat(lengthFtCell.textContent) || 0;
+      const widthFt = parseFloat(widthFtCell.textContent) || 0;
 
-  const lengthFt = parseFloat(lengthFtCell.textContent) || 0;
-  const widthFt = parseFloat(widthFtCell.textContent) || 0;
+      const totalAmountText = document.getElementById("totalAmount").textContent;
+      const totalAmount = parseFloat(totalAmountText);
 
-  const totalAmountText = document.getElementById("totalAmount").textContent;
-  const totalAmount = parseFloat(totalAmountText);
-
-  if (lengthFt === 0 || widthFt === 0) {
-    alert("Please enter valid Length and Width.");
-    return;
-  }
-
-  const newRow = document.createElement("tr");
-
-  const serialCell = document.createElement("td");
-  serialCell.textContent = tableBody.rows.length + 1;
-
-  const sizeCell = document.createElement("td");
-  sizeCell.textContent = `${lengthFt.toFixed(2)} × ${widthFt.toFixed(2)} ft`;
-
-  const costCell = document.createElement("td");
-  costCell.textContent = isNaN(totalAmount) ? "—" : `₹${totalAmount.toFixed(2)}`;
-
-  const deleteCell = document.createElement("td");
-  const deleteBtn = document.createElement("button");
-  deleteBtn.textContent = "Delete";
-  deleteBtn.style.backgroundColor = "#e53935";
-  deleteBtn.style.color = "#fff";
-  deleteBtn.style.border = "none";
-  deleteBtn.style.padding = "6px 12px";
-  deleteBtn.style.borderRadius = "4px";
-  deleteBtn.style.cursor = "pointer";
-  deleteBtn.style.fontSize = "14px";
-  deleteBtn.addEventListener("click", () => {
-    newRow.remove();
-    updateGrandTotal();
-    updateSerialNumbers();
-  });
-  deleteCell.appendChild(deleteBtn);
-
-  newRow.appendChild(serialCell);
-  newRow.appendChild(sizeCell);
-  newRow.appendChild(costCell);
-  <!-- newRow.appendChild(deleteCell); -->
-
-  tableBody.appendChild(newRow);
-
-  updateGrandTotal();
-
-  // === New logic: Update profileQuantityTable quantities ===
-  const sourceRows = document.querySelectorAll("#profileTable tbody tr");
-  const targetRows = document.querySelectorAll("#profileQuantityTable tbody tr");
-
-  sourceRows.forEach(sourceRow => {
-    const sourceProfile = sourceRow.cells[0]?.textContent.trim();
-    const sourceQtyInput = sourceRow.cells[1]?.querySelector("input");
-    const sourceQty = parseFloat(sourceQtyInput?.value) || 0;
-
-    targetRows.forEach(targetRow => {
-      const targetProfile = targetRow.cells[0]?.textContent.trim();
-      const targetQtyInput = targetRow.cells[1]?.querySelector("input");
-
-      if (targetProfile === sourceProfile && targetQtyInput) {
-        const currentQty = parseFloat(targetQtyInput.value) || 0;
-        targetQtyInput.value = currentQty + sourceQty;
+      if (lengthFt === 0 || widthFt === 0) {
+        alert("Please enter valid Length and Width.");
+        return;
       }
+
+      const newRow = document.createElement("tr");
+
+      const serialCell = document.createElement("td");
+      serialCell.textContent = tableBody.rows.length + 1;
+
+      const sizeCell = document.createElement("td");
+      sizeCell.textContent = `${lengthFt.toFixed(2)} × ${widthFt.toFixed(2)} ft`;
+
+      const costCell = document.createElement("td");
+      costCell.textContent = isNaN(totalAmount) ? "—" : `₹${totalAmount.toFixed(2)}`;
+
+      newRow.appendChild(serialCell);
+      newRow.appendChild(sizeCell);
+      newRow.appendChild(costCell);
+
+      tableBody.appendChild(newRow);
+      updateGrandTotal();
+
+      // === Update profileQuantityTable quantities ===
+      const sourceRows = document.querySelectorAll("#profileTable tbody tr");
+      const targetRows = document.querySelectorAll("#profileQuantityTable tbody tr");
+
+      sourceRows.forEach(sourceRow => {
+        const sourceProfile = sourceRow.cells[0]?.textContent.trim();
+        const sourceQtyInput = sourceRow.cells[1]?.querySelector("input");
+        const sourceQty = parseFloat(sourceQtyInput?.value) || 0;
+
+        targetRows.forEach(targetRow => {
+          const targetProfile = targetRow.cells[0]?.textContent.trim();
+          const targetQtyInput = targetRow.cells[1]?.querySelector("input");
+
+          if (targetProfile === sourceProfile && targetQtyInput) {
+            const currentQty = parseFloat(targetQtyInput.value) || 0;
+            targetQtyInput.value = currentQty + sourceQty;
+          }
+        });
+      });
     });
-  });
-});
-function updateGrandTotal() {
-  let grandTotal = 0;
-  document.querySelectorAll("#profileCostTable tbody tr").forEach(row => {
-    const costText = row.cells[2].textContent.replace(/[₹,]/g, "");
-    const cost = parseFloat(costText);
-    if (!isNaN(cost)) grandTotal += cost;
-  });
-  document.getElementById("grandTotal").textContent = grandTotal.toFixed(2);
-}
 
-document.getElementById("printBtn").addEventListener("click", () => {
-  const printContents = document.getElementById("printSection").innerHTML;
-  const originalContents = document.body.innerHTML;
+    function updateGrandTotal() {
+      let grandTotal = 0;
+      document.querySelectorAll("#profileCostTable tbody tr").forEach(row => {
+        const costText = row.cells[2].textContent.replace(/[₹,]/g, "");
+        const cost = parseFloat(costText);
+        if (!isNaN(cost)) grandTotal += cost;
+      });
+      document.getElementById("grandTotal").textContent = grandTotal.toFixed(2);
+    }
 
-  document.body.innerHTML = printContents;
-  window.print();
-  document.body.innerHTML = originalContents;
-  location.reload(); // reload to restore event listeners
-});
+    // FIXED: Print main section without page refresh
+    document.getElementById("printBtn").addEventListener("click", () => {
+      // Hide everything except printSection
+      document.querySelectorAll("body > *:not(#printSection)").forEach(el => el.style.display = "none");
+      document.getElementById("printSection").style.display = "block";
+      
+      // Print
+      window.print();
+      
+      // Restore all elements
+      document.querySelectorAll("body > *").forEach(el => el.style.display = "");
+    });
 
-document.getElementById("printProfileBtn").addEventListener("click", () => {
-  const printContents = document.getElementById("profileCostSection").innerHTML;
-  const originalContents = document.body.innerHTML;
+    // FIXED: Print profile costs without page refresh
+    document.getElementById("printProfileBtn").addEventListener("click", () => {
+      // Hide everything except profile cost section
+      document.querySelectorAll("body > *:not(#profileCostSection)").forEach(el => el.style.display = "none");
+      document.getElementById("profileCostSection").style.display = "block";
+      
+      // Print
+      window.print();
+      
+      // Restore all elements
+      document.querySelectorAll("body > *").forEach(el => el.style.display = "");
+    });
 
-  document.body.innerHTML = printContents;
-  window.print();
-  document.body.innerHTML = originalContents;
-  location.reload(); // restore event listeners
-});
-    
-
-window.addEventListener("DOMContentLoaded", () => {
-  const profileRows = document.querySelectorAll("#profileTable tbody tr");
+    // FIXED: Print quantity table without page refresh  
+    document.getElementById("printQuantityTableBtn").addEventListener("click", () => {
+  // Store the original values and replace inputs with text for printing
   const quantityTableBody = document.querySelector("#profileQuantityTable tbody");
-
-  quantityTableBody.innerHTML = ""; // Clear any existing rows
-
-  profileRows.forEach(row => {
-    const profileCell = row.cells[0]; // First column: Profile name
-    if (!profileCell) return;
-
-    const profileName = profileCell.textContent.trim().toLowerCase();
-
-    // Skip summary rows
-    const skipLabels = [
-      "subtotal",
-      "gst",
-      "labour rate",
-      "installation rate",
-      "sazin rate",
-      "total amount"
-    ];
-
-    const isSummaryRow = skipLabels.some(label => profileName.includes(label));
-    if (isSummaryRow) return;
-
-    // Add valid profile row
-    const newRow = document.createElement("tr");
-    newRow.innerHTML = `
-      <td>${profileCell.textContent.trim()}</td>
-      <td><input type="number" min="0" placeholder="Enter quantity" /></td>
-    `;
-    quantityTableBody.appendChild(newRow);
+  const rows = quantityTableBody.querySelectorAll("tr");
+  
+  // Store values before modifying
+  const storedValues = [];
+  rows.forEach(row => {
+    const input = row.cells[1]?.querySelector("input");
+    if (input) {
+      storedValues.push(input.value || "0");
+      // Replace input with plain text for printing
+      row.cells[1].innerHTML = `<span style="font-weight: normal;">${input.value || "0"}</span>`;
+    }
+  });
+  
+  // Hide everything except quantity section
+  document.querySelectorAll("body > *:not(#profileQuantitySection)").forEach(el => el.style.display = "none");
+  document.getElementById("profileQuantitySection").style.display = "block";
+  
+  // Print
+  window.print();
+  
+  // Restore all elements
+  document.querySelectorAll("body > *").forEach(el => el.style.display = "");
+  
+  // Restore input fields with their values
+  rows.forEach((row, index) => {
+    if (storedValues[index] !== undefined) {
+      row.cells[1].innerHTML = `<input type="number" min="0" placeholder="Enter quantity" value="${storedValues[index]}" />`;
+    }
   });
 });
+    window.addEventListener("DOMContentLoaded", () => {
+      const profileRows = document.querySelectorAll("#profileTable tbody tr");
+      const quantityTableBody = document.querySelector("#profileQuantityTable tbody");
 
-document.getElementById("printQuantityTableBtn").addEventListener("click", () => {
-  document.body.classList.add("print-quantity-only");
-  window.print();
-  document.body.classList.remove("print-quantity-only");
-});
+      quantityTableBody.innerHTML = ""; // Clear any existing rows
 
+      profileRows.forEach(row => {
+        const profileCell = row.cells[0]; // First column: Profile name
+        if (!profileCell) return;
+
+        const profileName = profileCell.textContent.trim().toLowerCase();
+
+        // Skip summary rows
+        const skipLabels = [
+          "subtotal",
+          "gst",
+          "labour rate",
+          "installation rate",
+          "sazin rate",
+          "total amount"
+        ];
+
+        const isSummaryRow = skipLabels.some(label => profileName.includes(label));
+        if (isSummaryRow) return;
+
+        // Add valid profile row
+        const newRow = document.createElement("tr");
+        newRow.innerHTML = `
+          <td>${profileCell.textContent.trim()}</td>
+          <td><input type="number" min="0" placeholder="Enter quantity" /></td>
+        `;
+        quantityTableBody.appendChild(newRow);
+      });
+    });
 
   </script>
 </body>
-
-
-
-
-
-
-  
+</html>
